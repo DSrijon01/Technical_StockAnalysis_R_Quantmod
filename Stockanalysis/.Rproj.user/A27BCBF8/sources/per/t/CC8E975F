@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598559761427.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3263482004",
+    "id" : "CC8E975F",
+    "lastKnownWriteTime" : 1598559741,
+    "last_content_update" : 1598559741,
+    "path" : "C:/Users/User/Desktop/quantmod_stockanalysis/Stockanalysis/BuysellSignal_RSI_onstockdatachange.Rmd",
+    "project_path" : "BuysellSignal_RSI_onstockdatachange.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "10,17",
+        "last_setup_crc32" : "",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

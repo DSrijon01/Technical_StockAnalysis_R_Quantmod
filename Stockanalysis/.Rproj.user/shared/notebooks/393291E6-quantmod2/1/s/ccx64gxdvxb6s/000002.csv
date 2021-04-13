@@ -1,0 +1,5 @@
+"0","chartSeries(msft, "
+"0","            type = ""line"","
+"0","            subset = ""2007"","
+"0","            TA = ""addBBands(n = 20, sd = 2)"","
+"0","            theme = chartTheme(""white""))"

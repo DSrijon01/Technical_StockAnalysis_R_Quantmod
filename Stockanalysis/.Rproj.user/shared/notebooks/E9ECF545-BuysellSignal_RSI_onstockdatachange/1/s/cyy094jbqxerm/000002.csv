@@ -1,0 +1,4 @@
+"0","day <- 14"
+"0","price <- Cl(MSFT)"
+"0","signal <- c(0)"
+"0","rsi <- RSI(price, day)"

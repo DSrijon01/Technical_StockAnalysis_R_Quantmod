@@ -1,0 +1,117 @@
+---
+title: "Quantmod III"
+author: "cms"
+date: "9/4/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(quantmod)
+library(tidyverse)
+options("getSymbols.yahoo.warning"=FALSE)
+```
+
+
+###  Pull down Stock Data for Tesla using Get Symbols
+
+```{r}
+tsla <- getSymbols("Tsla", auto.assign = F)
+head(tsla)
+```
+
+
+### Store Closing Price (adjusted for stock splits)
+
+```{r}
+tsla_close <- tsla$TSLA.Close
+head(tsla_close)
+tsla_close2 <- Ad(tsla)
+head(tsla_close2)
+```
+
+
+### What is Lag
+
+
+```{r}
+?lag
+head(lag(tsla_close, 2))
+```
+
+
+### remove scientific notation
+
+
+```{r}
+options(scipen = 9999)
+```
+
+### Create daily % change vector
+
+```{r}
+daily_change <- tsla_close/lag(tsla_close,1) -1
+head(daily_change)
+```
+
+### Look at Histogram of Percentage Change
+
+```{r}
+hist((daily_change), 40, col = "green")
+```
+
+
+
+
+```{r}
+buy_signal <- .04
+```
+
+### Loop over all trading days (except the first)
+buy_signal == parameter
+tsla_close == data
+daily_change == %change
+signal == 1  or 0 buy/sell
+
+```{r}
+signal <- c(NULL)
+```
+
+```{r}
+for (i in 2:length(tsla_close)){
+  if(daily_change[i] > buy_signal){
+    signal[i] <- 1
+  } else
+    signal[i] <- 0
+}
+head(signal, 40)
+```
+
+### Reclassify signal to an xts object (tying it to a date)
+
+
+```{r}
+signal <- reclass(signal, tsla_close)
+head(signal,20)
+```
+
+
+### Chart the Series
+
+
+```{r}
+chartSeries(tsla_close,
+            type = "l",
+            subset = "2011-01::2012-01",
+            theme = chartTheme("white"))
+addTA(signal, type="S", col = "red")
+```
+
+
+### Add signal line to see how the model performs
+
+
+```{r}
+
+```
+

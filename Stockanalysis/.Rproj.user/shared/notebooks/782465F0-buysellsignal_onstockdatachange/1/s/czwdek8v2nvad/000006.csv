@@ -1,0 +1,4 @@
+"0","chartSeries(tsla_close,"
+"0","            type = ""l"","
+"0","            subset = ""2011-01::2012-01"","
+"0","            theme = chartTheme(""white""))"

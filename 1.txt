@@ -1,0 +1,118 @@
+---
+title: "Quantmod"
+author: "cms"
+date: "February 11, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(tidyverse)
+library(TTR)
+library(quantmod)
+library(PerformanceAnalytics)
+library(RColorBrewer)
+library(tseries)
+library(lubridate)
+library(Quandl)
+Quandl.api_key("zrcB2Ejv9UmvhPCUsy2_")
+options("getSymbols.yahoo.warning"=FALSE)
+
+```
+
+#Introduction:  We will load the libraries and capture some data for a stock and do a quick line graph
+
+```{r}
+#way1
+msft <- getSymbols("MSFT", auto.assign = FALSE)
+msft_Ad <- Ad(msft)
+head(msft_Ad)
+msft_daily <- dailyReturn(msft_Ad)
+head(msft_daily)
+
+#way2 
+new_msft <- dailyReturn(Ad(getSymbols("MSFT", auto.assign = F)))
+head(new_msft)
+```
+
+# Our first task will be to download daily returns for a new Stock.  We can start with Amazon.
+```{r}
+new <- MSFT[1:30, 1:3]
+MSFT["2007-01-03", "MSFT.Open"]
+```
+
+# Let's look at the Head and Tail of the Df
+```{r}
+head(MSFT)
+tail(MSFT)
+dim(MSFT)
+str(MSFT)
+```
+
+# In this task we're going to learn subsetting fundementals. We can do it by row/column reference or by row/column name
+
+```{r}
+df <- as.data.frame(MSFT)
+class(df)
+head(df)
+df<- as.xts(df)
+class(df)
+
+write.csv(df,"newdatamsft.csv")
+```
+
+#In this task I am going to show you how to rename the columns or easier subsetting.  I am also going to show you how to save data into .csv file for import into excel.  
+
+```{r}
+
+```
+
+
+
+# In this task we will learn about xts. zoo objects and how to convert back and forth between xts and data frames.
+
+```{r}
+
+```
+#pulling in the data for facebook and getting the adjusted columns
+```{r}
+fb <- getSymbols("FB", auto.assign = F)
+fb_ad <- Ad(fb)
+fb_daily <- dailyReturn(fb_ad)
+dim(fb_daily)
+
+new_fb <- dailyReturn(Ad(getSymbols("FB", auto.assign = F)))
+```
+#combine microsoft and facebooks adjusted closing return 
+```{r}
+comb <- merge(new_msft, new_fb)
+head(comb)
+
+comb_traded <- merge(new_msft, new_fb, all = F)
+head(comb_traded)
+```
+```{r}
+
+```
+#Analysing the combined data for microsoft and facebook 
+```{r}
+charts.PerformanceSummary(comb_traded, main = "FB vs MSFT")
+```
+#
+# In this task we will create a Daily Return and then Chart the data for one stock.
+```{r}
+table.AnnualizedReturns(comb_traded, scale = 252, Rf = .004/252)
+```
+
+```{r}
+options(scipen = 9999)
+tsla <- getSymbols("TSLA", auto.assign = F)
+head(tsla, 20)
+head(dailyReturn(tsla$TSLA.Adjusted))
+plot(dailyReturn(tsla$TSLA.Adjusted), type = "p")
+```
+
+#Next Project will consist of more data analytics and comparing multiple stocks against each other.

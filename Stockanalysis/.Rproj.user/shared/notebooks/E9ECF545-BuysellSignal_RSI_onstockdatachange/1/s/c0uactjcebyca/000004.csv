@@ -1,0 +1,4 @@
+"0","trade <- Lag(signal, 1)"
+"0","ret <- dailyReturn(MSFT)*trade"
+"0","names(ret) <- ""filter"""
+"0","charts.PerformanceSummary(ret, main = ""Simple Filter"")"

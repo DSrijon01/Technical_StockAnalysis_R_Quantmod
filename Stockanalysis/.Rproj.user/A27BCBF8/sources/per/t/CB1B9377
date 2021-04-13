@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1617207264464.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CB1B9377",
+    "lastKnownWriteTime" : 1598545699,
+    "last_content_update" : 1617207264464,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "EAA3E244",
+        "caption" : "msft",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=msft&cache_key=EAA3E244",
+        "displayedObservations" : 3585,
+        "environment" : "",
+        "object" : "msft",
+        "preview" : 0,
+        "totalObservations" : 3585,
+        "variables" : 6
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

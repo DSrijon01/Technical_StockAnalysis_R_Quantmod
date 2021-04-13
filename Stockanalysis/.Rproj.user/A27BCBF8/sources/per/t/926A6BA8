@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598545652812.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1957827075",
+    "id" : "926A6BA8",
+    "lastKnownWriteTime" : 1598543779,
+    "last_content_update" : 1617208168476,
+    "path" : "C:/Users/User/Desktop/quantmod_stockanalysis/quantmod2.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "87,81",
+        "last_setup_crc32" : "",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

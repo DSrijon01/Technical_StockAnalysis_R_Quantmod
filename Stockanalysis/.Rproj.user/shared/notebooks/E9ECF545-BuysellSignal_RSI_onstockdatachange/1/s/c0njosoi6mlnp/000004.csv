@@ -1,0 +1,4 @@
+"0","names(ret) <- ""Simple"""
+"0","names(ret2) <- ""RSI"""
+"0","retcomb <- cbind(ret, ret2)"
+"0","charts.PerformanceSummary(retcomb, main = ""Simple Filter vs RSI"")"
